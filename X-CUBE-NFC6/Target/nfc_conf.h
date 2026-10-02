@@ -30,8 +30,8 @@ extern "C" {
 #include "RTE_Components.h"
 #include "st25r3916_irq.h"
 
-#define TEST               5
-#define TEST_LINE          EXTI9_5_IRQn
+#define TEST               0
+#define TEST_LINE          EXTI0_IRQn
 
 #define TEST_RFAL_CUSTOM
 
@@ -132,9 +132,9 @@ extern "C" {
 #define PLATFORM_LED_AP2P_PORT       GPIOB    /*!< GPIO port used for LED AP2P*/
 
 #define BUS_SPI1_NSS_GPIO_PIN           GPIO_PIN_4
-#define BUS_SPI1_NSS_GPIO_PORT          GPIOC
-#define BUS_SPI1_IRQ_GPIO_PIN           GPIO_PIN_5
-#define BUS_SPI1_IRQ_GPIO_PORT          GPIOC
+#define BUS_SPI1_NSS_GPIO_PORT          GPIOA
+#define BUS_SPI1_IRQ_GPIO_PIN           GPIO_PIN_0
+#define BUS_SPI1_IRQ_GPIO_PORT          GPIOB
 
 /* Exported constants --------------------------------------------------------*/
 /** @defgroup PTD_Platform_Exported_Constants
@@ -146,13 +146,13 @@ extern "C" {
 #define ST25R_INT_PIN            BUS_SPI1_IRQ_GPIO_PIN    /*!< GPIO pin used for ST25R IRQ                   */
 #define ST25R_INT_PORT           BUS_SPI1_IRQ_GPIO_PORT   /*!< GPIO port used for ST25R IRQ port             */
 
-#define IRQ_ST25R_EXTI_IRQn      EXTI9_5_IRQn
+#define IRQ_ST25R_EXTI_IRQn      EXTI0_IRQn
 
 #define PLATFORM_USER_BUTTON_PIN     USER_BUTTON_PIN          /*!< GPIO pin user button       */
 #define PLATFORM_USER_BUTTON_PORT    USER_BUTTON_GPIO_PORT    /*!< GPIO port user button      */
 
-#define USR_INT_LINE             H_EXTI_5
-#define USR_INT_LINE_NUM         EXTI_LINE_5
+#define USR_INT_LINE             H_EXTI_0
+#define USR_INT_LINE_NUM         EXTI_LINE_0
 #define BSP_NFC0XCOMM_Init             BSP_SPI1_Init
 #define BSP_NFC0XCOMM_IRQ_Callback     BSP_SPI1_IRQ_Callback
 
@@ -178,7 +178,7 @@ void BSP_SPI1_IRQ_Callback(void);
 extern SPI_HandleTypeDef hspi1;
 
 extern uint8_t globalCommProtectCnt;
-extern  EXTI_HandleTypeDef H_EXTI_5;
+extern  EXTI_HandleTypeDef H_EXTI_0;
 /* Exported functions ------------------------------------------------------- */
 int32_t BSP_NFC0XCOMM_SendRecv(const uint8_t * const pTxData, uint8_t * const pRxData, uint16_t Length);
 
